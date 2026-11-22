@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JobMatch – Login & Signup</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN / SIGNUP / FORGOT PASSWORD -->
+<section id="auth">
+ <div class="card">
+  <h1>JobMatch</h1>
+  <p class="sub" id="subtitle">Log in to find jobs matched to you.</p>
+
+  <div class="tabs" id="tabs">
+   <button id="tLogin" class="on" type="button">Log in</button>
+   <button id="tSignup" type="button">Sign up</button>
+  </div>
+
+  <!-- Login -->
+  <div id="loginBox">
+   <label for="lRole">Log in as</label>
+   <select id="lRole"><option value="user">User</option><option value="admin">Admin</option></select>
+   <label for="lEmail">Email</label>
+   <input id="lEmail" type="email" autocomplete="email">
+   <label for="lPass">Password</label>
+   <input id="lPass" type="password" autocomplete="current-password">
+   <button class="primary" id="loginBtn" type="button">Log in</button>
+   <button class="link" id="forgotLink" type="button">Forgot password?</button>
+  </div>
+
+  <!-- Signup -->
+  <div id="signupBox" class="hidden">
+   <label for="sName">Full name</label>
+   <input id="sName" type="text" autocomplete="name">
+   <label for="sEmail">Email</label>
+   <input id="sEmail" type="email" autocomplete="email">
+   <label for="sPass">Password (min 6 characters)</label>
+   <input id="sPass" type="password" autocomplete="new-password">
+   <label for="sPass2">Confirm password</label>
+   <input id="sPass2" type="password" autocomplete="new-password">
+   <button class="primary" id="signupBtn" type="button">Create account</button>
+  </div>
+
+  <!-- Forgot password -->
+  <div id="forgotBox" class="hidden">
+   <div id="fStep1">
+    <label for="fEmail">Registered email</label>
+    <input id="fEmail" type="email" autocomplete="email">
+    <button class="primary" id="sendCodeBtn" type="button">Send reset code</button>
+   </div>
+
+   <div id="fStep2" class="hidden">
+    <label for="fCode">6-digit reset code</label>
+    <input id="fCode" type="text" inputmode="numeric" maxlength="6">
+    <label for="fPass">New password (min 6 characters)</label>
+    <input id="fPass" type="password" autocomplete="new-password">
+    <label for="fPass2">Confirm new password</label>
+    <input id="fPass2" type="password" autocomplete="new-password">
+    <button class="primary" id="resetBtn" type="button">Reset password</button>
+   </div>
+
+   <button class="link" id="backLogin" type="button">Back to log in</button>
+  </div>
+
+  <div class="msg" id="msg" role="alert"></div>
+  <div class="hint">Demo admin: admin@jobmatch.com / admin123</div>
+ </div>
+</section>
+
+<!-- AFTER LOGIN -->
+<div id="app" class="hidden">
+ <aside id="side">
+  <div class="brand">JobMatch</div>
+  <div class="who" id="who"></div>
+  <div id="menu"></div>
+  <button class="out" id="logoutBtn" type="button">Logout</button>
+ </aside>
+ <main>
+  <button class="menu-btn" id="menuBtn" type="button">☰ Menu</button>
+  <h2 id="pageTitle"></h2>
+  <div id="pageBody"></div>
+ </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
